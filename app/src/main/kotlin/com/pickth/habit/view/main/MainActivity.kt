@@ -36,7 +36,6 @@ import org.jetbrains.anko.toast
 import android.content.ClipData
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.helper.ItemTouchHelper
-import com.google.android.gms.ads.MobileAds
 import com.pickth.habit.listener.OnHabitMoveListener
 import com.pickth.habit.util.HabitTouchHelperCallback
 import com.pickth.habit.util.LinearSpacingItemDecoration
@@ -45,7 +44,6 @@ import com.pickth.habit.view.main.adapter.item.Habit
 import org.jetbrains.anko.alert
 import org.jetbrains.anko.noButton
 import org.jetbrains.anko.yesButton
-import com.google.firebase.analytics.FirebaseAnalytics
 
 
 
@@ -55,9 +53,6 @@ import com.google.firebase.analytics.FirebaseAnalytics
  */
 
 class MainActivity: BaseActivity(), MainContract.View {
-
-    // firebase
-    private lateinit var mFirebaseAnalytics: FirebaseAnalytics
 
     private var mDay: String = ""
     private lateinit var mPresenter: MainPresenter
@@ -92,9 +87,6 @@ class MainActivity: BaseActivity(), MainContract.View {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         Log.d(TAG, "onCreate")
-
-        // Obtain the FirebaseAnalytics instance.
-        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this)
 
         // actionbar
         setSupportActionBar(main_toolbar)
@@ -237,19 +229,5 @@ class MainActivity: BaseActivity(), MainContract.View {
         }
 
         return super.onOptionsItemSelected(item)
-    }
-
-    fun useAd() {
-        val ADMOB_APP_ID = this.getString(R.string.admob_app_id)
-        val ADMOB_AD_UNIT_ID = this.getString(R.string.admob_unit_id)
-
-        // admob
-        MobileAds.initialize(this, ADMOB_APP_ID)
-
-        // native add
-        // ad view
-//        val builder = AdLoader.Builder(this, ADMOB_AD_UNIT_ID)
-//
-//        mPresenter.useAd(builder)
     }
 }

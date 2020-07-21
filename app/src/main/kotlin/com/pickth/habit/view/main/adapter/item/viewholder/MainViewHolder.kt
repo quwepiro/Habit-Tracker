@@ -18,7 +18,6 @@ package com.pickth.habit.view.main.adapter.item.viewholder
 
 import android.support.v7.widget.RecyclerView
 import android.view.View
-import com.google.android.gms.ads.AdLoader
 import com.pickth.habit.view.main.adapter.item.Habit
 
 /**

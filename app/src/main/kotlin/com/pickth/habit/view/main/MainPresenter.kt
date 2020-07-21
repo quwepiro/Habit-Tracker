@@ -18,7 +18,6 @@ package com.pickth.habit.view.main
 
 import android.support.v7.widget.helper.ItemTouchHelper
 import android.util.Log
-import com.google.android.gms.ads.AdLoader
 import com.google.gson.Gson
 import com.pickth.habit.base.mvp.BaseView
 import com.pickth.habit.util.HabitManager
@@ -56,11 +55,6 @@ class MainPresenter: MainContract.Presenter, OnHabitTouchListener, OnHabitDragLi
 
     override fun setAdapterModel(model: MainAdapterContract.Model) {
         mAdapterModel = model
-    }
-
-    override fun useAd(builder: AdLoader.Builder) {
-        mAdapterView.setAdBuilder(builder)
-        mAdapterModel.addItem(AdItem(), mAdapterModel.getItemCount())
     }
 
     override fun setTouchHelper(habitTouchHelper: ItemTouchHelper) {

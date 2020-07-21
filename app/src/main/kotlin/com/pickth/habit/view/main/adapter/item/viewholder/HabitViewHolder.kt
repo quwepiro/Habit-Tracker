@@ -21,7 +21,6 @@ import android.support.v4.view.MotionEventCompat
 import android.support.v7.widget.RecyclerView
 import android.view.MotionEvent
 import android.view.View
-import com.google.android.gms.ads.AdLoader
 import com.pickth.habit.R
 import com.pickth.habit.extensions.setBackgroundColorWithRadius
 import com.pickth.habit.extensions.setHideAlphaAnimation
